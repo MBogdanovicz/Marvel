@@ -32,6 +32,7 @@ class HomeTableViewController: CharactersTableViewController, SearchedCharacters
         searchController.searchBar.searchBarStyle = .minimal
         searchController.searchResultsUpdater = searchResultsController
         searchController.delegate = searchResultsController
+        searchController.searchBar.delegate = searchResultsController
         
         self.definesPresentationContext = true
     }
@@ -59,21 +60,13 @@ class HomeTableViewController: CharactersTableViewController, SearchedCharacters
     }
 
     // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! CharacterTableViewCell
-        let character = characters[indexPath.row]
-        
-        cell.delegate = self
-        cell.config(character, favoriteList: favoriteCharacterIds)
-        
-        let count = characters.count
-        
-        if indexPath.row == count - 5 && count < total && !loading {
-            
-            loadCharacters()
-        }
-        
-        return cell
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "infoSegue", sender: characters[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination as? HeroDetailViewController
+        viewController?.character = sender as? Character
     }
 }

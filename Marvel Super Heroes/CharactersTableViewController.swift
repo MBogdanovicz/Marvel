@@ -10,9 +10,9 @@ import UIKit
 
 class CharactersTableViewController: UITableViewController, CharacterTableViewCellDelegate {
 
-    private var offset = 0
     let reuseIdentifier = "characterIdentifier"
     var characters: [Character]!
+    var offset = 0
     var total = 0
     var loading = false
     
@@ -78,11 +78,6 @@ class CharactersTableViewController: UITableViewController, CharacterTableViewCe
     
     func loadMore() {
         loadCharacters()
-    }
-    
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
 }
 

@@ -45,11 +45,21 @@ class SearchedCharactersTableViewController: CharactersTableViewController {
     override func didRemoveFavorite(_ character: Character) {
         delegate?.didRemoveFavorite(character)
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: String(describing: HeroDetailViewController.self)) as! HeroDetailViewController
+        controller.character = characters[indexPath.row]
+        
+        self.present(controller, animated: true, completion: nil)
+    }
 }
 
 extension SearchedCharactersTableViewController: UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        loadCharacters(startsWith: searchBar.text)
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -57,6 +67,10 @@ extension SearchedCharactersTableViewController: UISearchResultsUpdating, UISear
         guard let text = searchController.searchBar.text, !text.isEmpty else {
             characters?.removeAll()
             self.tableView.reloadData()
+            return
+        }
+        
+        if text == textToSearch {
             return
         }
         
@@ -68,19 +82,16 @@ extension SearchedCharactersTableViewController: UISearchResultsUpdating, UISear
         }
         
         textToSearch = text
+        offset = 0
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.validateSearch(text: text)
+            if searchController.isActive == true && text == self.textToSearch && !self.loading {
+                self.loadCharacters(startsWith: text)
+            }
         }
     }
     
     func willPresentSearchController(_ searchController: UISearchController) {
         favoriteCharacterIds = delegate?.getFavoriteCharacterIds()
-    }
-    
-    private func validateSearch(text: String) {
-        
-        if text == textToSearch {
-            loadCharacters(startsWith: text)
-        }
     }
 }
