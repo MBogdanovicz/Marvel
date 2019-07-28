@@ -27,6 +27,9 @@
 		9C5C67C722EDFC3F0089D6B9 /* UITableViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C67C622EDFC3F0089D6B9 /* UITableViewController+Extensions.swift */; };
 		9C5C67C922EE0E040089D6B9 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C67C822EE0E040089D6B9 /* HomeTableViewController.swift */; };
 		9C5C67CB22EE17670089D6B9 /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5C67CA22EE17670089D6B9 /* CharacterTableViewCell.xib */; };
+		9C6820AD22EE2EE700C886B4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6820AC22EE2EE700C886B4 /* ImageViewController.swift */; };
+		9C6820AF22EE30B200C886B4 /* AppearanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C6820AE22EE30B200C886B4 /* AppearanceView.xib */; };
+		9C6820B122EE317300C886B4 /* AppearanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6820B022EE317300C886B4 /* AppearanceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		9C5C67C622EDFC3F0089D6B9 /* UITableViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewController+Extensions.swift"; sourceTree = "<group>"; };
 		9C5C67C822EE0E040089D6B9 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		9C5C67CA22EE17670089D6B9 /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
+		9C6820AC22EE2EE700C886B4 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		9C6820AE22EE30B200C886B4 /* AppearanceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppearanceView.xib; sourceTree = "<group>"; };
+		9C6820B022EE317300C886B4 /* AppearanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,9 @@
 				9C5C67C622EDFC3F0089D6B9 /* UITableViewController+Extensions.swift */,
 				9C5C67C822EE0E040089D6B9 /* HomeTableViewController.swift */,
 				9C5C67CA22EE17670089D6B9 /* CharacterTableViewCell.xib */,
+				9C6820AC22EE2EE700C886B4 /* ImageViewController.swift */,
+				9C6820AE22EE30B200C886B4 /* AppearanceView.xib */,
+				9C6820B022EE317300C886B4 /* AppearanceView.swift */,
 			);
 			path = "Marvel Super Heroes";
 			sourceTree = "<group>";
@@ -268,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C6820AF22EE30B200C886B4 /* AppearanceView.xib in Resources */,
 				9C5C676B22EC9A0C0089D6B9 /* LaunchScreen.storyboard in Resources */,
 				9C5C676822EC9A0C0089D6B9 /* Assets.xcassets in Resources */,
 				9C5C676622EC9A0B0089D6B9 /* Main.storyboard in Resources */,
@@ -303,8 +313,10 @@
 				9C5C67C922EE0E040089D6B9 /* HomeTableViewController.swift in Sources */,
 				9C5C67C522EDF8AD0089D6B9 /* SearchedCharactersTableViewController.swift in Sources */,
 				9C5C679922ECBE770089D6B9 /* CharacterTableViewCell.swift in Sources */,
+				9C6820AD22EE2EE700C886B4 /* ImageViewController.swift in Sources */,
 				9C5C679B22ECC28B0089D6B9 /* UIImageView+Extensions.swift in Sources */,
 				9C5C67C722EDFC3F0089D6B9 /* UITableViewController+Extensions.swift in Sources */,
+				9C6820B122EE317300C886B4 /* AppearanceView.swift in Sources */,
 				9C5C676122EC9A0B0089D6B9 /* AppDelegate.swift in Sources */,
 				9C5C679322ECA19A0089D6B9 /* HeroDetailViewController.swift in Sources */,
 				9C5C679522ECB3B70089D6B9 /* Character.swift in Sources */,
