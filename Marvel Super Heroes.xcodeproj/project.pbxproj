@@ -27,6 +27,8 @@
 		9C6820AD22EE2EE700C886B4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6820AC22EE2EE700C886B4 /* ImageViewController.swift */; };
 		9C6820AF22EE30B200C886B4 /* AppearanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C6820AE22EE30B200C886B4 /* AppearanceView.xib */; };
 		9C6820B122EE317300C886B4 /* AppearanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6820B022EE317300C886B4 /* AppearanceView.swift */; };
+		9C6820B922EEE18700C886B4 /* FadePushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6820B822EEE18700C886B4 /* FadePushAnimator.swift */; };
+		9C6820BB22EEE40D00C886B4 /* FadePopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6820BA22EEE40D00C886B4 /* FadePopAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		9C6820AC22EE2EE700C886B4 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		9C6820AE22EE30B200C886B4 /* AppearanceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppearanceView.xib; sourceTree = "<group>"; };
 		9C6820B022EE317300C886B4 /* AppearanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceView.swift; sourceTree = "<group>"; };
+		9C6820B822EEE18700C886B4 /* FadePushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePushAnimator.swift; sourceTree = "<group>"; };
+		9C6820BA22EEE40D00C886B4 /* FadePopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePopAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 				9C6820AC22EE2EE700C886B4 /* ImageViewController.swift */,
 				9C6820AE22EE30B200C886B4 /* AppearanceView.xib */,
 				9C6820B022EE317300C886B4 /* AppearanceView.swift */,
+				9C6820B822EEE18700C886B4 /* FadePushAnimator.swift */,
+				9C6820BA22EEE40D00C886B4 /* FadePopAnimator.swift */,
 			);
 			path = "Marvel Super Heroes";
 			sourceTree = "<group>";
@@ -299,12 +305,14 @@
 				9C5C679722ECBC540089D6B9 /* MarvelModel.swift in Sources */,
 				9C5C67C322EDE7EC0089D6B9 /* Database.swift in Sources */,
 				9C5C67C122ECDB6B0089D6B9 /* DataModel.xcdatamodeld in Sources */,
+				9C6820B922EEE18700C886B4 /* FadePushAnimator.swift in Sources */,
 				9C5C679D22ECCFF40089D6B9 /* UIViewController+Extensions.swift in Sources */,
 				9C5C679922ECBE770089D6B9 /* CharacterTableViewCell.swift in Sources */,
 				9C6820AD22EE2EE700C886B4 /* ImageViewController.swift in Sources */,
 				9C5C679B22ECC28B0089D6B9 /* UIImageView+Extensions.swift in Sources */,
 				9C5C67C722EDFC3F0089D6B9 /* UITableViewController+Extensions.swift in Sources */,
 				9C6820B122EE317300C886B4 /* AppearanceView.swift in Sources */,
+				9C6820BB22EEE40D00C886B4 /* FadePopAnimator.swift in Sources */,
 				9C5C676122EC9A0B0089D6B9 /* AppDelegate.swift in Sources */,
 				9C5C679322ECA19A0089D6B9 /* HeroDetailViewController.swift in Sources */,
 				9C5C679522ECB3B70089D6B9 /* Character.swift in Sources */,

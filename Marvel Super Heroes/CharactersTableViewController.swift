@@ -22,6 +22,9 @@ class CharactersTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.delegate = self
+        
         favoriteCharacterIds = Database.loadFavorite()
         loadCharacters()
         setupSearch()
@@ -197,5 +200,20 @@ extension CharactersTableViewController: CharacterTableViewCellDelegate, HeroDet
     
     func didRemoveFavorite(_ character: Character) {
         favoriteCharacterIds.removeAll { $0 == character.id }
+    }
+}
+
+extension CharactersTableViewController: UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        switch operation {
+        case .push:
+            return FadePushAnimator()
+        case .pop:
+            return FadePopAnimator()
+        default:
+            return nil
+        }
     }
 }
