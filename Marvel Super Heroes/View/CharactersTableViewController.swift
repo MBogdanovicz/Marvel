@@ -23,6 +23,7 @@ class CharactersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.accessibilityIdentifier = "Characters View"
         navigationController?.delegate = self
         
         favoriteCharacterIds = Database.loadFavorite()

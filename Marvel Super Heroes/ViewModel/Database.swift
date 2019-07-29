@@ -65,6 +65,23 @@ class Database {
         }
     }
     
+    static func reset() {
+        
+        let context = getContext()
+        let fetchRequest = getFetchRequest()
+        let result = try! context.fetch(fetchRequest)
+        
+        for data in result as! [NSManagedObject] {
+            context.delete(data)
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            print("Failed saving")
+        }
+    }
+    
     private static func getFetchRequest() -> NSFetchRequest<NSFetchRequestResult> {
         
         return NSFetchRequest<NSFetchRequestResult>(entityName: entityName)

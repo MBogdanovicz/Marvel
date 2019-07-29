@@ -29,6 +29,7 @@
 		9C6820B122EE317300C886B4 /* AppearanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6820B022EE317300C886B4 /* AppearanceView.swift */; };
 		9C6820B922EEE18700C886B4 /* FadePushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6820B822EEE18700C886B4 /* FadePushAnimator.swift */; };
 		9C6820BB22EEE40D00C886B4 /* FadePopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6820BA22EEE40D00C886B4 /* FadePopAnimator.swift */; };
+		9C6820BD22EEF21600C886B4 /* Characters.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C6820BC22EEF21600C886B4 /* Characters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		9C6820B022EE317300C886B4 /* AppearanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceView.swift; sourceTree = "<group>"; };
 		9C6820B822EEE18700C886B4 /* FadePushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePushAnimator.swift; sourceTree = "<group>"; };
 		9C6820BA22EEE40D00C886B4 /* FadePopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadePopAnimator.swift; sourceTree = "<group>"; };
+		9C6820BC22EEF21600C886B4 /* Characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Characters.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,24 +130,13 @@
 		9C5C675F22EC9A0B0089D6B9 /* Marvel Super Heroes */ = {
 			isa = PBXGroup;
 			children = (
+				9C6820C122EEF59100C886B4 /* Extension */,
+				9C6820C022EEF54E00C886B4 /* ViewModel */,
+				9C6820BF22EEF54900C886B4 /* View */,
+				9C6820BE22EEF54300C886B4 /* Model */,
 				9C5C676022EC9A0B0089D6B9 /* AppDelegate.swift */,
-				9C5C676422EC9A0B0089D6B9 /* Main.storyboard */,
 				9C5C676722EC9A0C0089D6B9 /* Assets.xcassets */,
-				9C5C676922EC9A0C0089D6B9 /* LaunchScreen.storyboard */,
 				9C5C676C22EC9A0C0089D6B9 /* Info.plist */,
-				9C5C678E22ECA05E0089D6B9 /* Service.swift */,
-				9C5C679022ECA1790089D6B9 /* CharactersTableViewController.swift */,
-				9C5C679222ECA19A0089D6B9 /* HeroDetailViewController.swift */,
-				9C5C679422ECB3B70089D6B9 /* Character.swift */,
-				9C5C679622ECBC540089D6B9 /* MarvelModel.swift */,
-				9C5C679822ECBE770089D6B9 /* CharacterTableViewCell.swift */,
-				9C5C679A22ECC28B0089D6B9 /* UIImageView+Extensions.swift */,
-				9C5C679C22ECCFF40089D6B9 /* UIViewController+Extensions.swift */,
-				9C5C67C222EDE7EC0089D6B9 /* Database.swift */,
-				9C5C67C622EDFC3F0089D6B9 /* UITableViewController+Extensions.swift */,
-				9C6820AC22EE2EE700C886B4 /* ImageViewController.swift */,
-				9C6820AE22EE30B200C886B4 /* AppearanceView.xib */,
-				9C6820B022EE317300C886B4 /* AppearanceView.swift */,
 				9C6820B822EEE18700C886B4 /* FadePushAnimator.swift */,
 				9C6820BA22EEE40D00C886B4 /* FadePopAnimator.swift */,
 			);
@@ -157,6 +148,7 @@
 			children = (
 				9C5C677522EC9A0C0089D6B9 /* Marvel_Super_HeroesTests.swift */,
 				9C5C677722EC9A0C0089D6B9 /* Info.plist */,
+				9C6820BC22EEF21600C886B4 /* Characters.json */,
 			);
 			path = "Marvel Super HeroesTests";
 			sourceTree = "<group>";
@@ -168,6 +160,57 @@
 				9C5C678222EC9A0C0089D6B9 /* Info.plist */,
 			);
 			path = "Marvel Super HeroesUITests";
+			sourceTree = "<group>";
+		};
+		9C6820BE22EEF54300C886B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C679622ECBC540089D6B9 /* MarvelModel.swift */,
+				9C5C679422ECB3B70089D6B9 /* Character.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9C6820BF22EEF54900C886B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C6820C222EEF5C100C886B4 /* Component */,
+				9C6820AC22EE2EE700C886B4 /* ImageViewController.swift */,
+				9C5C679222ECA19A0089D6B9 /* HeroDetailViewController.swift */,
+				9C5C679022ECA1790089D6B9 /* CharactersTableViewController.swift */,
+				9C5C676922EC9A0C0089D6B9 /* LaunchScreen.storyboard */,
+				9C5C676422EC9A0B0089D6B9 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C6820C022EEF54E00C886B4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C67C222EDE7EC0089D6B9 /* Database.swift */,
+				9C5C678E22ECA05E0089D6B9 /* Service.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9C6820C122EEF59100C886B4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C679C22ECCFF40089D6B9 /* UIViewController+Extensions.swift */,
+				9C5C67C622EDFC3F0089D6B9 /* UITableViewController+Extensions.swift */,
+				9C5C679A22ECC28B0089D6B9 /* UIImageView+Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9C6820C222EEF5C100C886B4 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				9C6820AE22EE30B200C886B4 /* AppearanceView.xib */,
+				9C6820B022EE317300C886B4 /* AppearanceView.swift */,
+				9C5C679822ECBE770089D6B9 /* CharacterTableViewCell.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C6820BD22EEF21600C886B4 /* Characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

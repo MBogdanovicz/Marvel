@@ -26,6 +26,7 @@ class HeroDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.accessibilityIdentifier = "Hero Detail View"
         title = character?.name
         loadDetails()
         var image: UIImage!

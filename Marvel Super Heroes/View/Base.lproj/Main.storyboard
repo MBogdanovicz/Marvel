@@ -40,6 +40,7 @@
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a04-3Y-ITx">
                                             <rect key="frame" x="362" y="17" width="32" height="32"/>
+                                            <accessibility key="accessibilityConfiguration" label="favorite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="1Ru-dp-lMO"/>
                                                 <constraint firstAttribute="width" constant="32" id="cyg-S6-QQ1"/>
