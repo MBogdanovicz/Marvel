@@ -8,22 +8,62 @@
 
 import UIKit
 
+protocol HeroDetailViewControllerDelegate: AnyObject {
+    func didAddToFavorite(_ character: Character)
+    func didRemoveFavorite(_ character: Character)
+}
+
 class HeroDetailViewController: UIViewController {
 
     @IBOutlet weak var poster: UIImageView!
     @IBOutlet weak var stackView: UIStackView!
     
-    var character: Character?
+    weak var delegate: HeroDetailViewControllerDelegate?
+    var favButton: UIBarButtonItem!
+    var character: Character!
+    var favoriteCharacterIds: [Int]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = character?.name
         loadDetails()
+        var image: UIImage!
+        
+        if favoriteCharacterIds.contains(character.id) {
+            image = UIImage(named: "fav_on")
+        } else {
+            image = UIImage(named: "fav_off")!
+        }
+        
+        favButton = UIBarButtonItem(image: image.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(didTapFavorite))
+        self.navigationItem.rightBarButtonItem  = favButton
     }
     
     override func viewDidAppear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    @objc func didTapFavorite() {
+        if favoriteCharacterIds.contains(character.id) {
+            removeFavorite()
+        } else {
+            addToFavorite()
+        }
+    }
+    
+    private func addToFavorite() {
+        favoriteCharacterIds.append(character.id)
+        favButton.image = UIImage(named: "fav_on")?.withRenderingMode(.alwaysOriginal)
+        Database.addToFavorite(character)
+        delegate?.didAddToFavorite(character)
+    }
+    
+    private func removeFavorite() {
+        favoriteCharacterIds.removeAll { $0 == character.id }
+        favButton.image = UIImage(named: "fav_off")?.withRenderingMode(.alwaysOriginal)
+        Database.removeFromFavorite(character)
+        delegate?.didRemoveFavorite(character)
     }
     
     private func loadDetails() {
@@ -42,7 +82,7 @@ class HeroDetailViewController: UIViewController {
         stackView.addArrangedSubview(AppearanceView(appearance: appearance, title: title))
     }
     
-    private func loadPoster() {
+    @objc private func loadPoster() {
         guard let character = character else {
             return
         }
